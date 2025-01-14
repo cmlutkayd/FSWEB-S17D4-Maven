@@ -44,12 +44,12 @@ public interface OgrenciRepository extends JpaRepository<Ogrenci, Long> {
     List<Ogrenci> find10AStudentsByOgrNo();
 
     //Öğrenciler tablosundaki en genç öğrenciyi listeleyiniz.
-    String QUESTION_8 = "select * from ogrenci where order by dtarih desc limit 1";
+    String QUESTION_8 = "select * from ogrenci  order by dtarih desc limit 1";
     @Query(value = QUESTION_8, nativeQuery = true)
     Ogrenci findYoungestStudent();
 
     //Öğrenciler tablosundaki en yaşlı öğrenciyi listeleyiniz.
-    String QUESTION_9 = "select * from ogrenci where order by dtarih limit 1";
+    String QUESTION_9 = "select * from ogrenci  order by dtarih limit 1";
     @Query(value = QUESTION_9, nativeQuery = true)
     Ogrenci findElderStudent();
 
